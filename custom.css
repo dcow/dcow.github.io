@@ -1,0 +1,52 @@
+pre {
+  overflow: auto;
+  word-wrap: normal;
+  white-space: pre;
+}
+
+.center { display: block; margin-left: auto; margin-right: auto; text-align: center;}
+    .shadow {
+      -moz-box-shadow: 10px 10px 5px #888;
+      -webkit-box-shadow: 10px 10px 5px #888;
+      box-shadow: 10px 10px 5px #888;
+    }
+    .twist {
+      
+      transition-property: box-shadow, border-radius, transform:rotate;
+      transition-duration: 1s, 2s, 1s;
+      -moz-transition-property: -moz-box-shadow, -moz-border-radius, -moz-transform:rotate;
+      -moz-transition-duration: 1s, 2s, 1s;
+      -webkit-transition-property: -webkit-box-shadow, -webkit-border-radius, -webkit-transform:rotate;
+      -webkit-transition-duration: 1s, 2s, 1s;
+      -o-transition-property: -o-box-shadow, -o-border-radius, -o-transform:rotate;
+      -o-transition-duration: 1s, 2s, 1s;
+      -ms-transition-property: -ms-box-shadow, -ms-border-radius, -ms-transform:rotate;
+      -ms-transition-duration: 1s, 2s, 1s;
+
+    }
+    .twist:hover {
+      box-shadow: 0 0 4em 5em rgba(127,127,127,0.4);
+      transition-property: box-shadow, border-radius, transform:rotate;
+      transition-duration: 2s, 3s, 0.7s;
+      -moz-box-shadow: 0 0 4em 5em rgba(127,127,127,0.4);
+      -moz-transition-property: -moz-box-shadow, -moz-border-radius, -moz-transform:rotate;
+      -moz-transition-duration: 2s, 3s, 0.7s;
+      -webkit-box-shadow: 0 0 4em 5em rgba(127,127,127,0.4);
+      -webkit-transition-property: -webkit-box-shadow, -webkit-border-radius, -webkit-transform:rotate;
+      -webkit-transition-duration: 2s, 3s, 0.7s;
+      -o-box-shadow: 0 0 4em 5em rgba(127,127,127,0.4);
+      -o-transition-property: -o-box-shadow, -o-border-radius, -o-transform:rotate;
+      -o-transition-duration: 2s, 3s, 0.7s;
+      -ms-box-shadow: 0 0 4em 5em rgba(127,127,127,0.4);
+      -ms-transition-property: -ms-box-shadow, -ms-border-radius, -ms-transform:rotate;
+      -ms-transition-duration: 2s, 3s, 0.7s;
+
+      transform:rotate(2deg);
+      -moz-transform:rotate(2deg);
+      -webkit-transform:rotate(2deg);
+      -ms-transform:rotate(2deg);
+      -o-transform:rotate(2deg);
+    }
+    img.store {
+      width: 172px;
+    }

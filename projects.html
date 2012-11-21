@@ -16,6 +16,14 @@
       }
     </style>
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="themes/default/default.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="themes/light/light.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="themes/dark/dark.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="themes/bar/bar.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="nivo-slider.css" type="text/css" media="screen" />
+
+    <link rel="stylesheet" href="custom.css" type="text/css">
   
   </head>
   <body>
@@ -49,18 +57,110 @@
     </div>
 
     <div class="container clear-top">
-      <div class="hero-unit">
-        <h1> David Cowden </h1>
+      <div class="span8 offset1 hero-unit">
+        <h1> Projects </h1>
         <hr> 
+        <h2> Scheme Fractals </h2>
+
         <p>
-          Devious.. crafty.. cunning.. untrustworthy.. but a generally acceptable person. I can run faster than a speeding bullet, leap tall buildings in a single bound, and enjoy iced tea.. <i>without</i> sweetener.
-        </p>      
+        Using Scheme + MediaScript + GIMP I wrote a program that generates 1000[+] unique images.  To achieve this variability, I used rendered a fractal much like the Julia set (with a few parameters altered).  Overlayed on top of the Julia Set is a dragon fractal (the squares).
+
+        <!--
+        <div id="schemeCarousel" class="carousel slide">
+        -->
+          <!-- Carousel items -->
+          <!--
+          <div class="carousel-inner">
+            <div class="active item">
+              <img src="img/proj/fractal-project.290.500x500.png" alt="" />
+            </div>
+            <div class="item"><img src="img/proj/fractal-project.299.500x500.png" alt="" /></div>
+            <div class="item"><img src="img/proj/fractal-project.475.500x500.png" alt="" /></div>
+            <div class="item"><img src="img/proj/fractal-project.99.500x500.png" alt="" /></div>
+            <div class="item"><img src="img/proj/fractal-project.498.500x500.png" alt="" /></div>
+          </div>
+          <!-- Carousel nav -->
+          <!--
+          <a class="carousel-control left" href="#schemeCarousel" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#schemeCarousel" data-slide="next">&rsaquo;</a>
+        </div>
+      -->
+
+        <div class="slider-wrapper theme-default">
+            <div id="slider" class="nivoSlider">
+                <img src="img/proj/fractal-project.290.500x500.png" alt="" />
+                <img src="img/proj/fractal-project.299.500x500.png" alt="" />
+                <img src="img/proj/fractal-project.475.500x500.png" alt="" />
+                <img src="img/proj/fractal-project.99.500x500.png" alt="" />
+                <img src="img/proj/fractal-project.498.500x500.png" alt="" />
+            </div>
+          </div>
+
+        <p>
+        Download a <a alt="fractal-image" href="img/proj/fractal-project.png" > 1280x1280 sized image</a> similar to the second image in the slide show.
+
+        <p>
+        To render a complex fractal such as the Julia Set, I define the x and y axis of an image as the real and complex parts of a complex number: a + bi ==> x + yi.  Now, for each pixel in the image, I compute the Julia Set on the complex number formed from the x and y values of the pixel's position within the cartesian coordinant plane implicitly formed by an image's grid of pixels.
+
+        <p>
+        Since the Julia Set is a recursive funtion and will compute forever, it must be capped.  I keep track of the ammount of recursions that happen before the fractal breaks out of some arbitraty boundry condition.  The pixel is then colored acourding to that number.
+
+        <p>
+        With an expressive language like Scheme, the code is rather concise:
+        <code><pre>
+(define julia!
+  (lambda (n img . color-scheme)
+    (let ((n_ (+ 0.3520 (* n 0.0002288)))
+          (c-scheme (if (null? color-scheme) 
+                        (lambda (n) 
+                          (rgb-new (+ 120 n) (+ 70 (* 3 n)) (+ 80 (* 7 n))))
+                        (car color-scheme))))
+      (let* ((min_real (* n_ -2.0))
+             (max_real n_)
+             (min_imag (* n_ -1.2))
+             (max_imag (+ (* (- n_ min_real) 
+                             (/ (image-height img) (image-width img))) min_imag))
+             (real_offset (/ (- max_real min_real) (decrement (image-width img))))
+             (imag_offset (/ (- max_imag min_imag) (decrement (image-height img)))))
+        (let ((calculate-set 
+                (lambda (col row)
+                  (let ((c_real (+ min_real (* col real_offset)))
+                        (c_imag (- max_imag (* row imag_offset))))
+                    (let seed ((Z_real c_real)
+                               (Z_imag c_imag)
+                               (n 0))
+                      (if (or (> (+ (expt Z_real 2) (expt Z_imag 2)) 4) (= n 100))
+                          (c-scheme n)
+                          (seed (+ (- (expt Z_real 2) (expt Z_imag 2))
+                                   Z_real Z_imag) n_) 
+                                   (increment n))))))))
+          
+          (image-compute-pixels! img calculate-set)
+          img)))))
+        </pre></code>
+
+        <hr>
+
+        <h2>Glicious</h2>
+
+        <p><img class="center shadow twist" src="http://apps.g-licio.us/images/splash.png" alt="G-licious Splash">
+
+        <p>
+          G-licious is a quick and easy way to check the Dining Menu in the Grinnell Dining Hall. You can check the menu for today, tomorrow, or any day in the next week as and when a new menu becomes available. G-licious also provides serving and nutritional information.  G-licious is fully supported on iOS, Android, and Windows Phone and is optimized for both phone and tablet layouts.
+
+        <p>
+          Homepage: <a href="http://app.g-licio.us" alt="Glicious Homepage">apps.g-licio.us</a>
+
+        <hr>
+
+
+      
       </div>
     </div><!-- /container -->
     
     <footer class="footer">
       <div class="container">
-      <p><i>www.dcow.me &copy 2012 David Cowden</i>
+      <p><em>www.dcow.me &copy 2012 David Cowden</em>
       </div>
     </footer>
 
@@ -69,17 +169,19 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="js/bootstarp.js"></script>
-    <script src="js/bootstrap-transition.js"></script>
-    <script src="js/bootstrap-alert.js"></script>
-    <script src="js/bootstrap-modal.js"></script>
-    <script src="js/bootstrap-dropdown.js"></script>
-    <script src="js/bootstrap-scrollspy.js"></script>
-    <script src="js/bootstrap-tab.js"></script>
-    <script src="js/bootstrap-tooltip.js"></script>
-    <script src="js/bootstrap-popover.js"></script>
-    <script src="js/bootstrap-button.js"></script>
-    <script src="js/bootstrap-collapse.js"></script>
-    <script src="js/bootstrap-carousel.js"></script>
-    <script src="js/bootstrap-typeahead.js"></script>
+
+    <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+    <script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+    </script>
+    <script type="text/javascript">
+    $(window).load(function() {
+        $('#schemeCarousel').carousel();
+    });
+    </script>
+    
+
     </body>
 </html>
