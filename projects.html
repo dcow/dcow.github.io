@@ -72,6 +72,7 @@
           <li><a href="#glicious"><i class="icon-chevron-right"></i> Glicious</a></li>
           <li><a href="#tcdb2"><i class="icon-chevron-right"></i> TCDB2</a></li>
           <li><a href="#jpearltrees"><i class="icon-chevron-right"></i> jPearltrees</a></li>
+          <li><a href="#myroc"><i class="icon-chevron-right"></i> MyroC</a></li>
         </ul>
       </div>
       
@@ -106,8 +107,7 @@
 
         <p>
         With an expressive language like Scheme, the code is rather concise:
-        <pre><code>
-(define julia!
+        <pre><code>(define julia!
   (lambda (n img . color-scheme)
     (let ((n_ (+ 0.3520 (* n 0.0002288)))
           (c-scheme (if (null? color-scheme) 
@@ -135,16 +135,18 @@
                                    (increment n))))))))
           
           (image-compute-pixels! img calculate-set)
-          img)))))
-        </code></pre>
+          img)))))</code></pre>
 
         <hr>
 
         <h2 id="glicious">Glicious</h2>
+        <p>
+           <br >
 
         <p><img class="center shadow twist" src="http://apps.g-licio.us/images/splash.png" alt="G-licious Splash">
 
         <p>
+          <br >
           G-licious is a quick and easy way to check the Dining Menu in the Grinnell Dining Hall. You can check the menu for today, tomorrow, or any day in the next week as and when a new menu becomes available. G-licious also provides serving and nutritional information.  G-licious is fully supported on iOS, Android, and Windows Phone and is optimized for both phone and tablet layouts.
 
         <p>
@@ -177,7 +179,19 @@
           <p>
             jPearltrees is especially useful because it allows you to define a handler for the different pearls and then traverse the entire tree calling the respective callbacks each time a pearl is visited:
 
-            <pre><code class="java">// Use your own handler..
+            <pre><code class="java">// Print a subtree..
+PearlIterator pit = pt.listTreePearls();
+while (pit.hasNext()) {
+    // Access Pearl data
+    Pearl p = pit.nextPearl
+    System.out.println( p.getTitle() + 
+                        " : " + 
+                        p.getEntryDate());
+
+    NoteIterator nit = p.getNotes();
+    ...
+}
+// Use your own handler..
 PearlHandler ph = new PearlHandler() {
     public onPearl(RootPearl rootPearl) {
         // Do Something with rootPearl..
@@ -205,7 +219,16 @@ for(Pearl pearl : treePearls) {
             <hr>
 
 
+            <h2 id="myroc">MyroC</h2>
 
+            <p>
+              This package builds upon the Myro C++ package from the University of Tennessee at Knoxville to create a C-based library for connecting with Scribbler 2 robots. Using "extern C" interfaces, the Myro-C package compiles and runs in a standard C environment.
+
+            <p>
+              The Myro-C package supports a wide range of capabilities for the Scribbler 2 robot, controlled with C programs. The package also was developed to support a semester-long course introducing imperative problem solving and data structures at Grinnell College. Complete materials (syllabus, modules, readings, labs, and projects) are available at <a href="http://www.cs.grinnell.edu/~walker/courses/161.fa11/" alt="link to course home">http://www.cs.grinnell.edu/~walker/courses/161.fa11/ </a>.
+
+            <p>
+              The source for this project is available on <a href="https://launchpad.net/myro-c" alt="link to lanunchpad source">Launchpad.net as MyroC</a>
       
       </div>
       </div>
