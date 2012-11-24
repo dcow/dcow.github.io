@@ -82,7 +82,7 @@
         <h2 id="schemefractals"> Scheme Fractals </h2>
 
         <p>
-        Using Scheme + MediaScript + GIMP I wrote a program that generates 1000[+] unique images.  To achieve this variability, I used rendered a fractal much like the Julia set (with a few parameters altered).  Overlayed on top of the Julia Set is a dragon fractal (the squares).
+        Using Scheme + MediaScript + GIMP I wrote a program that generates 1000[+] unique images.  To achieve this variability, I rendered a fractal inspiried by the Julia set, which is, itself, a variation of the Mandelbrot set.  Overlayed on top of the Julia Set is a dragon fractal, and a grid and circles.
 
 
         <div class="slider-wrapper theme-default">
@@ -99,10 +99,10 @@
         Download a <a alt="fractal-image" href="img/proj/fractal-project.png" > 1280x1280 sized image</a> similar to the second image in the slide show.
 
         <p>
-        To render a complex fractal such as the Julia Set, I define the x and y axis of an image as the real and complex parts of a complex number: a + bi ==> x + yi.  Now, for each pixel in the image, I compute the Julia Set on the complex number formed from the x and y values of the pixel's position within the cartesian coordinant plane implicitly formed by an image's grid of pixels.
+        To render a complex fractal such as the Julia Set, I define the x and y axis of an image as the real and complex parts of a complex number: a + bi ==> x + yi.  Now, for each pixel in the image, I compute the Julia Set on the complex number formed from the x and y values of the pixel's position within the Cartesian coordinate plane implicitly formed by an image's grid of pixels.
 
         <p>
-        Since the Julia Set is a recursive funtion and will compute forever, it must be capped.  I keep track of the ammount of recursions that happen before the fractal breaks out of some arbitraty boundry condition.  The pixel is then colored acourding to that number.
+        Since the Julia Set is a recursive function and will compute forever, it must be capped.  I keep track of the amount of recursions that happen before the fractal breaks out of some arbitrary boundary condition.  The pixel is then colored according to that number.
 
         <p>
         With an expressive language like Scheme, the code is rather concise:
@@ -168,10 +168,10 @@
             jPearltrees is a Java library that provides an interface for handling the RDF/XML data exported from a Pearltrees account.
           
           <p>
-            Pearltrees is an individualy managed data-curation system with support for teams and collaboration. Pearltrees lets you organize categorical data into trees and provides convenient methods for further data curation.
+            Pearltrees is an individually managed data-curation system with support for teams and collaboration. Pearltrees lets you organize categorical data into trees and provides convenient methods for further data cureation.
 
           <p>
-            As the owner of all the data in your Pearltrees account, you can export your entire collection in an RDF/XML format. jPearltrees adapts the RDF/XML structure back into the natural tree structure and provides methods for accessing the data containted within a PearlTree.
+            As the owner of all the data in your Pearltrees account, you can export your entire collection in an RDF/XML format. jPearltrees adapts the RDF/XML structure back into the natural tree structure and provides methods for accessing the data contained within a PearlTree.
 
 
           <p>
