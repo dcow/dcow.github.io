@@ -4,6 +4,10 @@ pre, code {
   white-space: pre;
 }
 
+.fixed-w500 {
+  width:500px;
+}
+
 .sidebar-nav-fixed {
     padding: 9px 0;
     position:fixed;

@@ -72,6 +72,7 @@
           <li><a href="#glicious"><i class="icon-chevron-right"></i> Glicious</a></li>
           <li><a href="#tcdb2"><i class="icon-chevron-right"></i> TCDB2</a></li>
           <li><a href="#jpearltrees"><i class="icon-chevron-right"></i> jPearltrees</a></li>
+          <li><a href="#raytracer"><i class="icon-chevron-right"></i> RayTracer</a></li>
           <li><a href="#myroc"><i class="icon-chevron-right"></i> MyroC</a></li>
         </ul>
       </div>
@@ -86,7 +87,7 @@
         Using Scheme + MediaScript + GIMP I wrote a program that generates 1000[+] unique images.  To achieve this variability, I rendered a fractal inspiried by the Julia set, which is, itself, a variation of the Mandelbrot set.  Overlayed on top of the Julia Set is a dragon fractal, as well as a grid and circles.
 
 
-        <div class="slider-wrapper theme-default">
+        <div class="slider-wrapper theme-default fixed-w500 center">
             <div id="slider" class="nivoSlider">
                 <img src="img/proj/fractal-project.290.500x500.png" alt="" />
                 <img src="img/proj/fractal-project.299.500x500.png" alt="" />
@@ -219,6 +220,24 @@ for(Pearl pearl : treePearls) {
             <hr>
 
 
+            <h2 id="raytracer">RayTracer</h2>
+
+            <p>
+              One way of generating images is <a href="http://en.wikipedia.org/wiki/Ray_tracing_(graphics)" alt="ray tracing link">ray tracing</a> (or casting).  In ray tracing you define a scene of objects and you cast rays from the observer onto the scene. By using models for diffuse and reflective surfaces (such as <a href="http://en.wikipedia.org/wiki/Phong_reflection_model" alt="phong reflection wikipedia">the Phong model</a>), and incorporating a basic refraction model, you can determine where light generated from both point and directional sources should be coming from when your casted rays collide with an object in the scene graph.  The result is returned and a pixel is colored accordingly. 
+
+            <p>
+              A simple scene may look like this:
+
+            <img class="center" src="http://new.tinygrab.com/91a92c423a3c00ed82ce930635cfda97a78394c48f.png" alt="ray racer output" />
+              
+            <p>
+              RayTracer is written in C++ and uses OpenGL for the display.  Rendering, however, is done on the CPU.  The casting of rays, Phong reflection, refraction, curve intersection, and generation of the image are all written from scratch.  
+
+            <p>
+              You can view <a href="https://github.com/dcow/RayTracer" alt="raytracer source">my implementation</a> of a simple RayTracer on Github.
+
+            <hr>
+
             <h2 id="myroc">MyroC</h2>
 
             <p>
@@ -229,6 +248,10 @@ for(Pearl pearl : treePearls) {
 
             <p>
               The source for this project is available on <a href="https://launchpad.net/myro-c" alt="link to lanunchpad source">Launchpad.net as MyroC</a>
+
+            <p>
+              We also published and presented a paper among the proceedings of the ACM Special Interest Group in Computer Science Education conference in March of 2012 [<a href="http://www.sigcse.org/sigcse2012/" alt="link to sigcse2012">SIGCSE 2012</a>].  The paper is titled <em>A C-Based Introductory Course Using Robots</em> and is available on <a href="http://dl.acm.org/citation.cfm?id=2157150">the ACM digital library</a>.  
+
       
       </div>
       </div>
@@ -240,22 +263,24 @@ for(Pearl pearl : treePearls) {
       </div>
     </footer>
 
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="js/bootstarp.js"></script>
-    <script src="js/bootstarp-scrollspy.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="js/bootstarp.js"></script>
+    <script type="text/javascript" src="js/bootstarp-scrollspy.js"></script>
 
     <script src="js/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
 
     <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
     <script type="text/javascript">
+
     $(window).load(function() {
+
         $('#slider').nivoSlider();
+        hljs.initHighlightingOnLoad();
         //$('#side-navbar').scrollspy();
     });
+
+    hljs.initHighlightingOnLoad();
+
     </script>
 
     </body>
