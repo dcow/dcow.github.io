@@ -108,7 +108,7 @@
 
         <p>
         With an expressive language like Scheme, the code is rather concise:
-        <code><pre>(define julia!
+        <pre><code>(define julia!
   (lambda (n img . color-scheme)
     (let ((n_ (+ 0.3520 (* n 0.0002288)))
           (c-scheme (if (null? color-scheme) 
@@ -136,7 +136,7 @@
                                    (increment n))))))))
           
           (image-compute-pixels! img calculate-set)
-          img)))))</pre></code>
+          img)))))</code></pre>
 
         <hr>
 
@@ -180,7 +180,7 @@
           <p>
             jPearltrees is especially useful because it allows you to define a handler for the different pearls and then traverse the entire tree calling the respective callbacks each time a pearl is visited:
 
-            <code class="java"><pre>// Print a subtree..
+            <pre><code class="java">// Print a subtree..
 PearlIterator pit = pt.listTreePearls();
 while (pit.hasNext()) {
     // Access Pearl data
@@ -212,7 +212,7 @@ PearlHandler ph = new PearlHandler() {
 List<Pearl> treePearls = pt.getTreePearls();
 for(Pearl pearl : treePearls) {
     pearl.accept(ph);    
-} </pre></code>
+} </code></pre>
 
             <p>
               jPearltrees is available at: <a href="http://jpearls.dcow.me">jpearls.dcow.me</a>
