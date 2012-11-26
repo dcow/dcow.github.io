@@ -209,7 +209,7 @@ PearlHandler ph = new PearlHandler() {
 }
 
 // Each Pearl passes itself to the handler's callback..
-List<Pearl> treePearls = pt.getTreePearls();
+List&lt;Pearl&gt; treePearls = pt.getTreePearls();
 for(Pearl pearl : treePearls) {
     pearl.accept(ph);    
 } </code></pre>
