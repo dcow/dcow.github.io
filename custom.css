@@ -26,6 +26,11 @@ html,body{
     padding-bottom: 50px;    /* height of footer */
 }
 
+.content {
+  padding-bottom: 100px;
+
+}
+
 footer{
     height: 50px; 
     width:100%;
