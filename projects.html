@@ -89,7 +89,7 @@
         Using Scheme + MediaScript + GIMP I wrote a program that generates 1000[+] unique images.  To achieve this variability, I rendered a fractal inspired by the Julia set, which is, itself, a variation of the Mandelbrot set.  Overlayed on top of the Julia Set is a dragon fractal, as well as a grid and circles.
 
 
-        <div class="slider-wrapper theme-default fixed-w500 center">
+        <div class="slider-wrapper theme-default max-w500 center">
             <div id="slider" class="nivoSlider">
                 <img src="img/proj/fractal-project.290.500x500.png" alt="" />
                 <img src="img/proj/fractal-project.299.500x500.png" alt="" />
@@ -109,7 +109,7 @@
         <p>
         Since the Julia Set is a recursive function and will compute forever, it must be capped.  An easy way to do this is to keep track of the amount of recursions that happen before the fractal breaks out of some arbitrary boundary condition.  The pixel is can then colored according to that number to achieve cool effects.  Using a simple green to yellow gradient, the plain fractal looks like this:
 
-        <div class="center fixed-w500 pad20" style="padding-top:0px;">
+        <div class="center max-w500 pad20" style="padding-top:0px;">
           <img class="shadow-small" src="img/proj/y-g-julia-set.png" alt="yellow and green julia set">
         </div>
 
@@ -151,7 +151,7 @@
           <p>
             The second fractal is a dragon fractal.  The dragon fractal is simpler in that it is not a complex fractal, rather, it can be created by "folding" lines.  I render it using a variation on turtle graphics.  Rather than a traditional turtle that simply colors the pixel it travels over, my custom turtle, a panda, passes the RGB value of the pixels it passes over to a user defined procedure (a one argument block) . 
 
-          <div class="center fixed-w500 pad20" style="padding-top:0px;">
+          <div class="center max-w500 pad20" style="padding-top:0px;">
             <img class="shadow-small" src="img/proj/julia-set-and-dragon.png" alt="julia set with a dragon fractal overlayed">
           </div>
 

@@ -13,6 +13,10 @@ pre, code {
   width: 500px;
 }
 
+.max-w500 {
+  max-width: 500px;
+}
+
 html,body{
     height: 100%
 }
