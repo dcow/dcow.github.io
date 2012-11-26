@@ -1,3 +1,8 @@
+body {
+  padding-bottom: 0px;
+
+}
+
 pre, code {
   overflow: auto;
   word-wrap: normal;
@@ -5,7 +10,19 @@ pre, code {
 }
 
 .fixed-w500 {
-  width:500px;
+  width: 500px;
+}
+
+footer {
+  width: 100%;
+  padding: 50px;
+  border-top: 2px solid #000;
+  background-color: #272727;
+}
+
+footer p {
+  color: #ccc;
+
 }
 
 .sidebar-nav-fixed {
