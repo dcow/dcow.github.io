@@ -47,6 +47,10 @@ footer p {
 
 }
 
+.pad20 {
+  padding: 20px;
+}
+
 .sidebar-nav-fixed {
     padding: 9px 0;
     position:fixed;
@@ -56,51 +60,60 @@ footer p {
 }
 
 .center { display: block; margin-left: auto; margin-right: auto; text-align: center;}
-    .shadow {
-      -moz-box-shadow: 10px 10px 5px #888;
-      -webkit-box-shadow: 10px 10px 5px #888;
-      box-shadow: 10px 10px 5px #888;
-    }
-    .twist {
-      
-      transition-property: box-shadow, border-radius, transform:rotate;
-      transition-duration: 1s, 2s, 1s;
-      -moz-transition-property: -moz-box-shadow, -moz-border-radius, -moz-transform:rotate;
-      -moz-transition-duration: 1s, 2s, 1s;
-      -webkit-transition-property: -webkit-box-shadow, -webkit-border-radius, -webkit-transform:rotate;
-      -webkit-transition-duration: 1s, 2s, 1s;
-      -o-transition-property: -o-box-shadow, -o-border-radius, -o-transform:rotate;
-      -o-transition-duration: 1s, 2s, 1s;
-      -ms-transition-property: -ms-box-shadow, -ms-border-radius, -ms-transform:rotate;
-      -ms-transition-duration: 1s, 2s, 1s;
 
-    }
-    .twist:hover {
-      box-shadow: 0 0 4em 5em rgba(127,127,127,0.4);
-      transition-property: box-shadow, border-radius, transform:rotate;
-      transition-duration: 2s, 3s, 0.7s;
-      -moz-box-shadow: 0 0 4em 5em rgba(127,127,127,0.4);
-      -moz-transition-property: -moz-box-shadow, -moz-border-radius, -moz-transform:rotate;
-      -moz-transition-duration: 2s, 3s, 0.7s;
-      -webkit-box-shadow: 0 0 4em 5em rgba(127,127,127,0.4);
-      -webkit-transition-property: -webkit-box-shadow, -webkit-border-radius, -webkit-transform:rotate;
-      -webkit-transition-duration: 2s, 3s, 0.7s;
-      -o-box-shadow: 0 0 4em 5em rgba(127,127,127,0.4);
-      -o-transition-property: -o-box-shadow, -o-border-radius, -o-transform:rotate;
-      -o-transition-duration: 2s, 3s, 0.7s;
-      -ms-box-shadow: 0 0 4em 5em rgba(127,127,127,0.4);
-      -ms-transition-property: -ms-box-shadow, -ms-border-radius, -ms-transform:rotate;
-      -ms-transition-duration: 2s, 3s, 0.7s;
+.shadow-small {
+  -moz-box-shadow: 1px 1px 7px 2px #888;
+  -webkit-box-shadow: 1px 1px 7px 2px #888;
+  -ms-box-shadow: 1px 1px 7px 2px #888;
+  -o-box-shadow: 1px 1px 7px 2px #888;
+  box-shadow: 1px 1px 7px 2px #888;
+}
 
-      transform:rotate(2deg);
-      -moz-transform:rotate(2deg);
-      -webkit-transform:rotate(2deg);
-      -ms-transform:rotate(2deg);
-      -o-transform:rotate(2deg);
-    }
-    img.store {
-      width: 172px;
-    }
+.shadow {
+  -moz-box-shadow: 10px 10px 5px #888;
+  -webkit-box-shadow: 10px 10px 5px #888;
+  box-shadow: 10px 10px 5px #888;
+}
+.twist {
+  
+  transition-property: box-shadow, border-radius, transform:rotate;
+  transition-duration: 1s, 2s, 1s;
+  -moz-transition-property: -moz-box-shadow, -moz-border-radius, -moz-transform:rotate;
+  -moz-transition-duration: 1s, 2s, 1s;
+  -webkit-transition-property: -webkit-box-shadow, -webkit-border-radius, -webkit-transform:rotate;
+  -webkit-transition-duration: 1s, 2s, 1s;
+  -o-transition-property: -o-box-shadow, -o-border-radius, -o-transform:rotate;
+  -o-transition-duration: 1s, 2s, 1s;
+  -ms-transition-property: -ms-box-shadow, -ms-border-radius, -ms-transform:rotate;
+  -ms-transition-duration: 1s, 2s, 1s;
+
+}
+.twist:hover {
+  box-shadow: 0 0 4em 5em rgba(127,127,127,0.4);
+  transition-property: box-shadow, border-radius, transform:rotate;
+  transition-duration: 2s, 3s, 0.7s;
+  -moz-box-shadow: 0 0 4em 5em rgba(127,127,127,0.4);
+  -moz-transition-property: -moz-box-shadow, -moz-border-radius, -moz-transform:rotate;
+  -moz-transition-duration: 2s, 3s, 0.7s;
+  -webkit-box-shadow: 0 0 4em 5em rgba(127,127,127,0.4);
+  -webkit-transition-property: -webkit-box-shadow, -webkit-border-radius, -webkit-transform:rotate;
+  -webkit-transition-duration: 2s, 3s, 0.7s;
+  -o-box-shadow: 0 0 4em 5em rgba(127,127,127,0.4);
+  -o-transition-property: -o-box-shadow, -o-border-radius, -o-transform:rotate;
+  -o-transition-duration: 2s, 3s, 0.7s;
+  -ms-box-shadow: 0 0 4em 5em rgba(127,127,127,0.4);
+  -ms-transition-property: -ms-box-shadow, -ms-border-radius, -ms-transform:rotate;
+  -ms-transition-duration: 2s, 3s, 0.7s;
+
+  transform:rotate(2deg);
+  -moz-transform:rotate(2deg);
+  -webkit-transform:rotate(2deg);
+  -ms-transform:rotate(2deg);
+  -o-transform:rotate(2deg);
+}
+img.store {
+  width: 172px;
+}
 
 /* GENERAL ELEMENT TYPE STYLES */
 
@@ -167,4 +180,9 @@ a {
 }
 a:hover {
   color: #c5000c;
+}
+
+hr {
+  border-color: #d55050;
+  border-style: dotted;
 }

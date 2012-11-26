@@ -86,7 +86,7 @@
         <h2 id="schemefractals"> Scheme Fractals </h2>
 
         <p>
-        Using Scheme + MediaScript + GIMP I wrote a program that generates 1000[+] unique images.  To achieve this variability, I rendered a fractal inspiried by the Julia set, which is, itself, a variation of the Mandelbrot set.  Overlayed on top of the Julia Set is a dragon fractal, as well as a grid and circles.
+        Using Scheme + MediaScript + GIMP I wrote a program that generates 1000[+] unique images.  To achieve this variability, I rendered a fractal inspired by the Julia set, which is, itself, a variation of the Mandelbrot set.  Overlayed on top of the Julia Set is a dragon fractal, as well as a grid and circles.
 
 
         <div class="slider-wrapper theme-default fixed-w500 center">
@@ -102,15 +102,22 @@
         <p>
         Download a <a href="img/proj/fractal-project.png" > 1280x1280 sized image</a> similar to the second image in the slide show.
 
+        <h3>The Julia Set</h3>
         <p>
-        To render a complex fractal such as the Julia Set, I define the x and y axis of an image as the real and complex parts of a complex number: a + bi ==> x + yi.  Now, for each pixel in the image, I compute the Julia Set on the complex number formed from the x and y values of the pixel's position within the Cartesian coordinate plane implicitly formed by an image's grid of pixels.
+        To render a complex fractal such as the Julia Set, you define the x and y axis of an image as the real and complex parts of a complex number: a + bi ==> x + yi.  Now, for each pixel in the image, you compute the Julia Set on the complex number formed from the x and y values of the pixel's position within the Cartesian coordinate plane implicitly formed by an image's grid of pixels.
 
         <p>
-        Since the Julia Set is a recursive function and will compute forever, it must be capped.  I keep track of the amount of recursions that happen before the fractal breaks out of some arbitrary boundary condition.  The pixel is then colored according to that number.
+        Since the Julia Set is a recursive function and will compute forever, it must be capped.  An easy way to do this is to keep track of the amount of recursions that happen before the fractal breaks out of some arbitrary boundary condition.  The pixel is can then colored according to that number to achieve cool effects.  Using a simple green to yellow gradient, the plain fractal looks like this:
+
+        <div class="center fixed-w500 pad20" style="padding-top:0px;">
+          <img class="shadow-small" src="img/proj/y-g-julia-set.png" alt="yellow and green julia set">
+        </div>
+
+        
 
         <p>
         With an expressive language like Scheme, the code is rather concise:
-        <pre><code>(define julia!
+        <pre><code class="scheme">(define julia!
   (lambda (n img . color-scheme)
     (let ((n_ (+ 0.3520 (* n 0.0002288)))
           (c-scheme (if (null? color-scheme) 
@@ -139,6 +146,43 @@
           
           (image-compute-pixels! img calculate-set)
           img)))))</code></pre>
+
+        <h3>Dragon Fractal</h4>
+          <p>
+            The second fractal is a dragon fractal.  The dragon fractal is simpler in that it is not a complex fractal, rather, it can be created by "folding" lines.  I render it using a variation on turtle graphics.  Rather than a traditional turtle that simply colors the pixel it travels over, my custom turtle, a panda, passes the RGB value of the pixels it passes over to a user defined procedure (a one argument block) . 
+
+          <div class="center fixed-w500 pad20" style="padding-top:0px;">
+            <img class="shadow-small" src="img/proj/julia-set-and-dragon.png" alt="julia set with a dragon fractal overlayed">
+          </div>
+
+          <p>
+            A dragon fractal is also rather concise:
+
+            <pre><code>(define dragoon!
+  (lambda (panda n . diet)
+    (let ((d 5))
+      (when (not (null? diet)) 
+        (panda ':set-diet! (car diet)) 
+        (when (= (length diet) 2)
+          (set! d (cadr diet))))
+      (let dragon-egg ((n n)
+                       (f #t))
+        (if (= n 0)
+            (panda-climb! panda d)
+            (if f 
+                ((lambda () 
+                   (panda-look! panda 45)
+                   (dragon-egg (decrement n) f)
+                   (panda-look! panda -90)
+                   (dragon-egg (decrement n) (not f))
+                   (panda-look! panda 45)))
+                ((lambda ()
+                   (panda-look! panda -45)
+                   (dragon-egg (decrement n) f)
+                   (panda-look! panda 90)
+                   (dragon-egg (decrement n) (not f))
+                   (panda-look! panda -45)))
+                ))))))</code></pre>
 
         <hr>
 
