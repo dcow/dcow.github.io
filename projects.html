@@ -149,7 +149,7 @@
 
         <h3>Dragon Fractal</h3>
           <p>
-            The second fractal is a dragon fractal.  The dragon fractal is simpler in that it is not a complex fractal, rather, it can be created by "folding" lines.  I render it using a variation on turtle graphics.  Rather than a traditional turtle that simply colors the pixel it travels over, my custom turtle, a panda, passes the RGB value of the pixels it passes over to a user defined procedure (a one argument block) . 
+            The second fractal is a dragon fractal.  The dragon fractal is simpler in that it is not a complex fractal, rather, it can be created by "folding" lines.  I render it using a variation on turtle graphics.  Rather than a traditional turtle that simply colors the pixel it travels over, my custom turtle, a panda, passes the RGB value of the pixels it passes over to a user defined procedure (a one argument block) which can use that value to compute the RGB value it returns.  The pixel's color is then set to the value returned by the block. This allows you to do coloring similar to the filters, such as overlay or inversion, that you find in any standard image manipulation program.
 
           <div class="center max-w500 pad20" style="padding-top:0px;">
             <img class="shadow-small" src="img/proj/julia-set-and-dragon.png" alt="julia set with a dragon fractal overlayed">
